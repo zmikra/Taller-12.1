@@ -9,9 +9,9 @@ function showData(dataArray) {
     console.log(dataArray);
       // Si en el futuro decides mostrar los datos, puedes hacerlo aquí
       // Por ejemplo:
-      dataArray.forEach(movie => {
+      /*dataArray.forEach(movie => {
       lista.innerHTML += `<li class="list-group-item">${movie.title}</li>`;
-      });
+      });*/
 }
 
     // Función para realizar el fetch
