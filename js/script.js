@@ -1,33 +1,32 @@
 let DATA_URL = "https://japceibal.github.io/japflix_api/movies-data.json"; // URL que contiene los datos sobre películas
 let moviesData = [];
 
-// Función para realizar el fetch
+// realizo fetch para tomar datos del json
 function fetchMovies(url) {
-    fetch(url)
-        .then(response => {
+    fetch(url).then(response => {
             if (response.ok) {
-                return response.json(); // Retorna los datos en formato JSON
+                return response.json();
             } else {
                 throw new Error(response.statusText);
             }
         })
         .then(data => {
-            moviesData = data; // Guardamos los datos en una variable global
-            console.log("Datos cargados:", moviesData); // Muestra los datos en la consola
+            moviesData = data; // cargo datos en variable
+            console.log("Datos cargados:", moviesData); // muestro en consola
         })
         .catch(error => {
             console.error("Error al cargar los datos:", error);
         });
 }
 
-// Función para generar estrellas según la calificación
+// función de estrellitas
 function generateStars(rating) {
     let starsHTML = '';
-    const maxStars = 5; // Máximo de estrellas a mostrar
+    const maxStars = 10; // Máximo de estrellas a mostrar
 
-    const fullStars = Math.floor(rating); // Estrellas completas
-    const halfStar = rating % 1 >= 0.5 ? 1 : 0; // Estrella media
-    const emptyStars = maxStars - fullStars - halfStar; // Estrellas vacías
+    const fullStars = Math.floor(rating); // estrellas enteras
+    const halfStar = rating % 1 >= 0.5 ? 1 : 0; // media estrella
+    const emptyStars = maxStars - fullStars - halfStar; // vacías
 
     for (let i = 0; i < fullStars; i++) {
         starsHTML += '<span class="fa fa-star checked"></span>';
@@ -75,7 +74,7 @@ function displayMovies(listMovies, searchInput) {
     document.getElementById("lista").innerHTML = moviesHTML;
 }
 
-// Función para mostrar información de la película en el offcanvas
+// muestra info de peliculas en offcanvas
 function showMovieInfo(movieId) {
     const movie = moviesData.find(m => m.id === movieId);
     
@@ -101,12 +100,12 @@ function showMovieInfo(movieId) {
     }
 }
 
-// Al cargar la página, se realizará el fetch
+// fetch al cargar página
 window.onload = function() {
-    fetchMovies(DATA_URL); // Solo llama a la función fetch
+    fetchMovies(DATA_URL); // llama al fetch
 };
 
-// Agregar el evento al botón de búsqueda
+// evento del botón de búsqueda
 document.getElementById("btnBuscar").addEventListener("click", () => {
     const searchInput = document.getElementById("inputBuscar").value;
     if (searchInput) {

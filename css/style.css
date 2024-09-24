@@ -20,22 +20,22 @@ main {
 }
 
 .list-group-item {
-    background-color: #343a40; /* Color oscuro */
-    border: none; /* Sin borde */
-    margin-bottom: 10px; /* Espacio entre cajas */
-    padding: 10px; /* Ajustar el padding para que sean más bajas */
-    display: flex; /* Usar flexbox para alinear contenido */
-    justify-content: space-between; /* Espacio entre título y estrellas */
-    align-items: center; /* Centrar verticalmente */
+    background-color: #343a40; 
+    border: none; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 .list-group-item h5, .list-group-item p {
-    color: white; /* Color del texto en blanco */
+    color: white; 
 }
 
 .star-container {
     display: flex; /* Contenedor para estrellas */
-    align-items: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar */
 }
 
 .fa-star, .fa-star-half-o {
@@ -43,6 +43,6 @@ main {
 }
 
 .checked {
-    color: orange; /* Color para las estrellas completas */
+    color: orange; /* Color para las estrellas enteras */
 }
 
