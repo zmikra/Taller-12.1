@@ -22,7 +22,7 @@ function fetchMovies(url) {
 // función de estrellitas
 function generateStars(rating) {
     let starsHTML = '';
-    const maxStars = 10; // Máximo de estrellas a mostrar
+    const maxStars = 5; // Máximo de estrellas a mostrar
 
     const fullStars = Math.floor(rating); // estrellas enteras
     const halfStar = rating % 1 >= 0.5 ? 1 : 0; // media estrella
